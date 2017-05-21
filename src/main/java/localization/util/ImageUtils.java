@@ -1,5 +1,8 @@
 package localization.util;
 
+import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
 import java.util.Stack;
 
 /**
@@ -60,4 +63,19 @@ public class ImageUtils {
         return stk;
     }
 
+    /**
+     * Resize an image
+     *
+     * @param image
+     * @param width new width
+     * @param height new height
+     * @return The resized image
+     */
+    public static BufferedImage resize(BufferedImage image, int width, int height) {
+        BufferedImage img = new BufferedImage(width, height, image.getType());
+        Graphics2D g = img.createGraphics();
+        AffineTransform at = AffineTransform.getScaleInstance(width / (float)image.getWidth(), height / (float)image.getHeight());
+        g.drawRenderedImage(image, at);
+        return img;
+    }
 }

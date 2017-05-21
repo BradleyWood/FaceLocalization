@@ -138,7 +138,7 @@ public class DefaultFaceLocalizer extends Localizer {
         int[] data = skinMap(buffer);
 
         binaryFillHoles(data, width, height, WHITE);
-        erodeEdges(buffer, data, width, height, 45);
+        erodeEdges(buffer, data, width, height, 40);
         boolean[] marked = binaryFillHoles(data, width, height, WHITE);
 
         faces.clear();

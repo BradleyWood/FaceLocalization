@@ -9,8 +9,6 @@ import java.util.List;
  */
 public abstract class Localizer {
 
-    public abstract void update(BufferedImage image);
-
-    public abstract List<Rectangle> localize();
+    public abstract List<Rectangle> localize(BufferedImage image);
 
 }
